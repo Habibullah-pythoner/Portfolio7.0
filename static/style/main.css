@@ -1,0 +1,513 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    pointer-events: auto;
+    scrollbar-width: none;  /* Firefox */
+}
+
+:root {
+    --white: #F5F5F5;
+    --black: #000000;
+    --gray: #E8E2E2;
+    --purple: #5D3891;
+
+    --spacing: 100px;
+
+    --inline_gap: 10px;
+}
+button {
+    cursor: pointer;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+a {
+    color: var(--black);
+    text-decoration: none;
+}
+#banner #menu_box a {
+    width: 100%;
+}
+#banner #flex div a {
+    height: calc(100% - 5px);
+    width: 100%;
+}
+#banner #flex div a button {
+    margin: 0px !important;
+    height: 100%;
+}
+body {
+    background-color: var(--white);
+}
+#cursor {
+    height: 20px;
+    overflow: visible;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(169%, 169%);
+    z-index: 69;
+}
+#cursor #dot {
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple);
+    border-radius: 50%;
+}
+#cursor #text {
+    position: absolute;
+    color: var(--white);
+    font-size: 1.6rem;
+    white-space: nowrap;
+    transform: translateX(30px);
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: 0.1s ease-in-out;
+}
+body.cursorText #cursor #text {
+    opacity: 1;
+}
+#mini_header {
+    font-size: 1.6rem;
+}
+a.fit_all {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+.section {
+    width: calc(100% - 20px) !important;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1500px;
+}
+.gapped {
+    padding-top: var(--spacing);
+}
+
+.big_screen {
+    display: none;
+}
+
+html {
+    font-size: 10px;
+    height: 100%;
+}
+body {
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+#main-window {
+    width: calc(100% - 0px);
+    /* max-width: 1500px; */
+    height: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#dummy_banner {
+    height: 63px;
+}
+#banner {
+    display: flex;
+    background-color: var(--white);
+    width: 100%;
+    top: 0px;
+    gap: 15px;
+    margin-top: 15px;
+    position: absolute;
+    min-height: 48px;
+    z-index: 10;
+}
+
+#banner button #flex {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    gap: 7px;
+}
+#banner button svg {
+    width: 20px;
+    height: 20px;
+}
+#banner button#startP {
+    white-space: nowrap;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    padding: 0px 30px;
+    border-radius: 15px;
+}
+#banner #flex button {
+    background-color: var(--gray);
+    height: calc(100% - 5px);
+    padding: 0px 30px;
+    border-radius: 10px;
+    border: 0px;
+}
+#banner img {
+    height: 20px;
+}
+#banner #bar {
+    border: 1px solid var(--black);
+    border-radius: 15px;
+    padding: 0px 5px;
+    width: calc(100% - 5px);
+}
+#banner #bar #flex {
+    display: flex;
+    padding: 0px 15px;
+    width: calc(100% - 30px);
+    height: 48px;
+    align-items: center;
+    justify-content: space-between;
+}
+#banner #menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10px;
+    width: 25px;
+    justify-content: space-between;
+}
+#banner #menu div {
+    width: 100%;
+    transition: 0.1s ease-in-out;
+    height: 1px;
+    background-color: var(--black);
+}
+body.menu #banner #menu div:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+body.menu #banner #menu div:last-child {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+#banner #menu_box {
+    display: flex;
+    overflow: hidden;
+    max-height: 0px;
+    transition: 0.1s ease-in-out;
+    flex-direction: column;
+    gap: 5px;
+}
+body.menu #banner #menu_box {
+    max-height: 500px;
+}
+#banner #menu_box div, #contact_flex {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+
+/* Top and botto padding of menu */
+#banner #menu_box div:first-child {
+    margin-top: 10px;
+}
+#banner #menu_box div:last-child {
+    margin-bottom: 5px;
+}
+#banner #menu_box div ul {
+    list-style: none;
+    height: 16px;
+    overflow: hidden;
+}
+#banner #menu_box div ul li {
+    transition: 0.1s ease-in-out;
+}
+#banner #menu_box div button.copied ul li {
+    transform: translateY(-100%);
+}
+#banner #menu_box div button, #contact_flex button {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    gap: 5px;
+    font-size: 1.6rem;
+    line-height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid var(--black);
+}
+#banner #menu_box div button.email {
+    border: 0px;
+    background-color: var(--gray);
+    width: 70%;
+}
+#banner #menu_box div button img, #contact_flex img {
+    height: 18px;
+}
+
+#footer {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer p {
+    font-size: 1.4rem;
+}
+#window {
+    width: calc(100% - 0px);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#scrollBar {
+    width: 13px;
+    height: calc(100% - 20px);
+    background-color: var(--gray);
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    border-radius: 15px;
+    border: 0px;
+}
+#scrollBar #thumb {
+    width: 9px;
+    position: relative;
+    height: 100px;
+    margin: 2px;
+    background-color: var(--purple);
+    border-radius: 15px;
+}
+#main-contents {
+    width: calc(100% - 0px);
+    height: auto !important ;
+    left: 50%;
+    pointer-events: none;
+    max-width: 1500px;
+    position: relative;
+    transform: translateX(-50%);
+    overflow-x: visible;
+}
+#portrait {
+    aspect-ratio: 5/6;
+    max-height: 70vh;
+    margin-top: 15px;
+    border: 1px solid var(--black);
+    border-radius: 15px;
+    overflow: hidden;
+}
+#portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#about_text {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+.about_section {
+    margin-top: 35px;
+}
+#skill {
+    width: 80%;
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#skill p {
+    font-size: 1.6rem;
+}
+#skill p.title {
+    grid-column: 1/3;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+#cv {
+    margin-top: 90px;
+    margin-bottom: 70px;
+}
+#cv p {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+#cv button {
+    background-color: var(--gray);
+    font-size: 1.6rem;
+    border: 0px;
+    border-radius: 12px;
+    padding: 10px 50px;
+}
+#about_contact {
+    padding-bottom: 150px;
+}
+#contact_flex {
+    margin-top: 30px;
+}
+#email_text {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+    .section {
+        width: calc(100% - 30px) !important;
+    }
+
+    #main_contact_btn #text {
+        max-width: 200px;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+        height: 100%;
+        justify-content: center;
+    }
+    body.contact #main_contact_btn #text {
+        max-width: 0px;
+        overflow: hidden;
+    }
+    #main_contact_btn svg {
+        max-width: 0px;
+        padding: 0px 15px;
+    }
+    body.contact #main_contact_btn svg {
+        height: 60%;
+        max-width: 100px;
+        width: 10px;
+    }
+    body.contact #banner #main_contact_btn {
+        background-color: transparent;
+        border: 1px solid var(--black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+    #banner #mini_flex {
+        display: flex !important;
+        align-items: center;
+        height: 100%;
+    }
+    body.contact #banner #mini_flex div#icons {
+        max-width: 1000px;
+    }
+    #banner #mini_flex div#icons {
+        display: flex;
+        height: 100%;
+        transition: 0.15s ease-in-out;
+        gap: 5px;
+        max-width: 0px;
+        overflow: hidden;
+        align-items: center;
+    }
+    body.contact #banner #mini_flex div#icons {
+        max-width: 1000px;
+    }
+    #banner #mini_flex div button {
+        display: flex;
+        width: 125px;
+        padding: 0px;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+    }
+    #banner #mini_flex div a:first-of-type {
+        margin-left: 10px;
+    }
+    #banner #bar #mini_flex div button img {
+        height: 20px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    #portrait {
+        aspect-ratio: 7/2;
+    }
+    #about_text {
+        font-size: 3.6rem;
+    }
+    #about_flex {
+        display: flex;
+        margin-top: 80px;
+        width: 100%;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+    #cv {
+        width: 45% !important;
+        padding-right: 5%;
+        margin-top: 0px;
+        left: 0px;
+        transform: none;
+    }
+    #skils {
+        width: 100%;
+        margin-top: 0px !important;
+    }
+    #about_flex #right {
+        width: 45%;
+        padding-right: 5%;
+    }
+    #about_flex #about_contact {
+        max-width: 400px;
+        margin-right: auto;
+        left: 0px;
+        transform: none;
+        margin-top: 80px;
+    }
+
+    #main-contents {
+        width: calc(100% - 30px);
+        padding-right: 30px;
+    }
+    #banner #bar, #banner #bar #flex {
+        padding: 0px !important;
+    }
+    #banner #bar #flex {
+        width: calc(100% - 5px);
+    }
+    #banner #bar #flex img {
+        margin: 25px;
+    }
+    #banner button {
+        font-size: 1.6rem !important;
+    }
+    #banner {
+        width: calc(100vw - 30px) !important;
+    }
+    /* #main-window {
+        left: 0px;
+        transform: none;
+    } */
+    #screen {
+        width: calc(100% - 20px);
+    }
+
+    #footer div {
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+    }
+    #footer p#btt {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+}
+@media (min-width: 1569px) {
+    #main-contents {
+        width: calc(100%);
+        padding-right: 0px;
+    }
+}

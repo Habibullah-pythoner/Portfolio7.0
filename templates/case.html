@@ -1,0 +1,122 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Web Designer and Web Developer | Habibullah | {{ work.name }}
+
+{% endblock title %}{% block content %}
+
+<div id="caseLanding" class="section">
+    <table class="case">
+        <tr>
+            <td>Work</td>
+            <td>{{ work.job }}</td>
+        </tr>
+        <tr>
+            <td>Estimated Time</td>
+            <td>{{ work.time }}</td>
+        </tr>
+        <tr>
+            <td>My Responsibility</td>
+            <td>{{ work.responsiblity }}</td>
+        </tr>
+    </table>
+    <h1>{{ work.name }}</h1>
+</div>
+<div id="main_mockup" class="section">
+    <img src="{{ work.main_mockup.url }}" alt="">
+</div>
+<div id="case_about" class="section">
+    <p id="mini_header">Reason of Work</p>
+    <h1>{{ work.main_text }}</h1>
+    <div class="case_section">
+        <h1>About</h1>
+        <p>{{ work.about }}</p>
+    </div>
+    <div class="case_section">
+        <h1>Technologies</h1>
+        <div id="tech">
+            {% for thetech in work.tech %}
+                <p>{{ thetech }}</p>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+<div id="more_mocks">
+    <div id="images">
+        {% for mockup in mockups %}
+            <img src="{{ mockup.mockups.url }}">
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<script>
+    const slider = document.querySelector('#more_mocks');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    });
+</script>
+<div id="dummyCallToAction" class="section colorless big_screen"></div>
+<div id="callToAction" class="section small_screen">
+    <div id="content">
+        <p>Have the Website Champ Your Competitors Envy!</p>
+        <h1>EMAIL</h1>
+    </div>
+</div>
+{% endblock content %}
+{% block outofborder %}
+<div id="callToAction" class="section big_screen">
+    <div id="content">
+        <div id="texts">
+            <p>Have the Website Champ Your Competitors Envy!</p>
+            <h1>EMAIL</h1>
+        </div>
+        
+    </div>
+    <div id="minicontact" class="round_icons">
+        <a href="https://www.linkedin.com/in/habibullah-noori-692860211/" target="_blank">
+            <button>
+                <img src="{% static "img/social/linkedin.png" %}">
+            </button>
+        </a>
+        <a href="https://twitter.com/Habib00405378" target="_blank">
+            <button>
+                <img src="{% static "img/social/twitter.png" %}">
+            </button>
+        </a>
+        <a href="https://github.com/Habibullah-pythoner" target="_blank">
+            <button>
+                <img src="{% static "img/social/github.png" %}">
+            </button>
+        </a>
+    </div>
+    
+</div>
+{% endblock outofborder %}

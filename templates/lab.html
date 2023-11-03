@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        var address_to_model ="{% static 'models/standingoutbuilding.gltf' %}"; // Pass this variable to .js file
+        var address_to_model2 ="{% static 'models/notmuchstandingoutbuilding.gltf' %}"; // Pass this variable to .js file
+    </script>
+    
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+          }
+        }
+      </script>
+      <script type="module" src="{% static "scripts/three.js" %}"></script>
+</body>
+</html>

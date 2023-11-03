@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="{% static "img/favicon.ico" %}" type="image/x-icon">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <meta name="description" content="Professional Web Design and Development Services by Your Name. We create stunning websites with cutting-edge technology and user-friendly design. Contact us today for a free consultation.">
+    <meta property="og:title" content="Web Designer and Web Developer | Habibullah">
+    <meta property="og:description" content="Professional Web Design and Development Services by Your Name. We create stunning websites with cutting-edge technology and user-friendly design. Contact us today for a free consultation.">
+    <meta property="og:image" content="image"> <!-- Replace with the URL of your image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Designer and Web Developer | Habibullah">
+    <meta name="twitter:description" content="Professional Web Design and Development Services by Your Name. We create stunning websites with cutting-edge technology and user-friendly design. Contact us today for a free consultation.">
+    <meta name="twitter:image" content="https://example.com/your-image.jpg"> <!-- Replace with the URL of your image -->
+
+    {% block extra_features %}{% endblock extra_features %}
+
+    <link rel="stylesheet" href="{% static "/style/main.css" %}">
+    <link rel="stylesheet" href="{% static "/style/pages.css" %}">
+</head>
+
+<body onload="loaded()" class="">
+    <div id="cursor" class="big_screen">
+        <div id="dot"></div>
+        <div id="text">Click For Case Study</div>
+    </div>
+    <div id="main-window">
+        <div id="dummy_banner"></div>
+        <div id="banner" class="section">
+            <div id="bar">
+                <div id="flex">
+                    <a href="/">
+                        <img src="{% static "img/mainlogo.png" %}">
+                    </a>
+                    <div id="mini_flex" class="big_screen">
+                        <button id="main_contact_btn" onclick="banner_contact()">
+                            <div id="text">
+                            CONTACT
+                            </div>
+                            <svg viewBox="0 0 7 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="9.09856" height="0.711927" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 0.503418 13.0886)" fill="black"/>
+                                <rect x="0.503906" y="0.218567" width="9.09645" height="0.713171" transform="rotate(45 0.503906 0.218567)" fill="black"/>
+                                </svg>
+                                
+                        </button>
+                        <div id="icons">
+                            <a href="https://www.linkedin.com/in/habibullah-noori-692860211/">
+                                <button><img src="{% static "img/social/linkedin.png" %}"> Linkedin</button>
+                            </a>
+                            <a href="https://twitter.com/Habib00405378">
+                                <button><img src="{% static "img/social/twitter.png" %}"> Twitter/X</button>
+                            </a>
+                            <a href="https://github.com/Habibullah-pythoner">
+                                <button><img src="{% static "img/social/github.png" %}"> Github</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="menu" class="small_screen" onclick="menu()">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div id="menu_box">
+                    <div>
+                        <button class="email">
+                            <ul>
+                                <li>EMAIL</li>
+                                <li>COPIED</li>
+                            </ul>
+                        </button>
+                        <button>
+                            <div id="flex">
+                                <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.4527 6.00978C10.6024 5.54913 11.2541 5.54912 11.4038 6.00978L12.0243 7.91961C12.2251 8.53765 12.801 8.95609 13.4509 8.95609H15.459C15.9434 8.95609 16.1447 9.57589 15.7529 9.8606L14.1283 11.0409C13.6026 11.4229 13.3826 12.1 13.5834 12.718L14.2039 14.6278C14.3536 15.0885 13.8264 15.4715 13.4345 15.1868L11.8099 14.0065C11.2842 13.6245 10.5723 13.6245 10.0465 14.0065L8.42194 15.1868C8.03009 15.4715 7.50285 15.0885 7.65253 14.6278L8.27307 12.718C8.47388 12.1 8.25389 11.4229 7.72816 11.0409L6.10356 9.86059C5.7117 9.57589 5.91309 8.95609 6.39745 8.95609H8.40557C9.05541 8.95609 9.63134 8.53765 9.83215 7.91961L10.4527 6.00978Z" stroke="black"/>
+                                    <path d="M12.9756 6.43094C13.3356 6.10684 13.8999 6.43269 13.7992 6.90647L13.3817 8.87071C13.2466 9.50635 13.5362 10.1567 14.099 10.4816L15.838 11.4857C16.2575 11.7278 16.122 12.3653 15.6403 12.4159L13.6432 12.6258C12.9969 12.6938 12.4679 13.1701 12.3328 13.8058L11.9152 15.77C11.8145 16.2438 11.1664 16.3119 10.9694 15.8694L10.1526 14.0349C9.88831 13.4412 9.27179 13.0853 8.62551 13.1532L6.6284 13.3631C6.14669 13.4138 5.88162 12.8184 6.24157 12.4943L7.73389 11.1506C8.21681 10.7158 8.36483 10.0194 8.10051 9.42578L7.28374 7.59128C7.08673 7.14879 7.57104 6.71272 7.99051 6.9549L9.72959 7.95896C10.2924 8.28388 11.0004 8.20946 11.4833 7.77464L12.9756 6.43094Z" stroke="black"/>
+                                    </svg>                                
+                                Start a project
+                            </div>
+                        </button>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/in/habibullah-noori-692860211/" target="_blank">
+                            <button><img src="{% static "img/social/linkedin.png" %}"> Linkedin</button>
+                        </a>
+                        <a href="https://twitter.com/Habib00405378" target="_blank">
+                            <button><img src="{% static "img/social/twitter.png" %}"> Twitter/X</button>
+                        </a>
+                        <a href="https://github.com/Habibullah-pythoner" target="_blank">
+                            <button><img src="{% static "img/social/github.png" %}"> Github</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button id="startP" class="big_screen">
+                <div id="flex">
+                    <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.4527 6.00978C10.6024 5.54913 11.2541 5.54912 11.4038 6.00978L12.0243 7.91961C12.2251 8.53765 12.801 8.95609 13.4509 8.95609H15.459C15.9434 8.95609 16.1447 9.57589 15.7529 9.8606L14.1283 11.0409C13.6026 11.4229 13.3826 12.1 13.5834 12.718L14.2039 14.6278C14.3536 15.0885 13.8264 15.4715 13.4345 15.1868L11.8099 14.0065C11.2842 13.6245 10.5723 13.6245 10.0465 14.0065L8.42194 15.1868C8.03009 15.4715 7.50285 15.0885 7.65253 14.6278L8.27307 12.718C8.47388 12.1 8.25389 11.4229 7.72816 11.0409L6.10356 9.86059C5.7117 9.57589 5.91309 8.95609 6.39745 8.95609H8.40557C9.05541 8.95609 9.63134 8.53765 9.83215 7.91961L10.4527 6.00978Z" stroke="black"/>
+                        <path d="M12.9756 6.43094C13.3356 6.10684 13.8999 6.43269 13.7992 6.90647L13.3817 8.87071C13.2466 9.50635 13.5362 10.1567 14.099 10.4816L15.838 11.4857C16.2575 11.7278 16.122 12.3653 15.6403 12.4159L13.6432 12.6258C12.9969 12.6938 12.4679 13.1701 12.3328 13.8058L11.9152 15.77C11.8145 16.2438 11.1664 16.3119 10.9694 15.8694L10.1526 14.0349C9.88831 13.4412 9.27179 13.0853 8.62551 13.1532L6.6284 13.3631C6.14669 13.4138 5.88162 12.8184 6.24157 12.4943L7.73389 11.1506C8.21681 10.7158 8.36483 10.0194 8.10051 9.42578L7.28374 7.59128C7.08673 7.14879 7.57104 6.71272 7.99051 6.9549L9.72959 7.95896C10.2924 8.28388 11.0004 8.20946 11.4833 7.77464L12.9756 6.43094Z" stroke="black"/>
+                        </svg>                                
+                    Start a project
+                </div>
+            </button>
+        </div>
+        <div id="main-contents">
+            {% block content %}
+            
+            {% endblock content %}
+        </div>
+        {% block outofborder %}{% endblock outofborder %}
+        
+        <div id="footer" class="section">
+            <div>
+                <p>© 2024</p>
+                <p class="big_screen">legal & terms</p>
+            </div>
+            <p id="btt">BACK TO TOP</p>
+        </div>
+    </div>
+
+    <div id="scrollBar" class="big_screen">
+        <div id="thumb"></div>
+    </div>
+    
+    
+    
+    {% comment %} Scripts {% endcomment %}
+    <script src="{% static "scripts/events.js" %}"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Web Designer and Web Developer | Habibullah | About Me
+
+{% endblock title %}
+
+{% block content %}
+
+<div id="portrait" class="section">
+    <img src="{% static "img/portraits/me.webp" %}">
+</div>
+
+<p id="about_text" class="section">The name's Habib, or Habibullah Noori if you prefer the full title. I've been crafting websites, web apps, and designing stunning UI and UX for a good five years now. So, yes, I've been in this business for quite a while.</p>
+<div id="about_flex" class="section">
+    <div id="right">
+        <div id="skils" class="section about_section">
+            <h1>Skills</h1>
+            <div id="skill">
+                <p class="title">Front-end</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>ThreeJS</p>
+            </div>
+            <div id="skill">
+                <p class="title">Front-end</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>ThreeJS</p>
+            </div>
+            <div id="skill">
+                <p class="title">Front-end</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>ThreeJS</p>
+            </div>
+            <div id="skill">
+                <p class="title">Front-end</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>JavaScript</p>
+                <p>ThreeJS</p>
+            </div>
+        </div>
+        <div id="about_contact" class="section">
+            <h1>Contact</h1>
+            <div id="contact_flex">
+                <button><img src="{% static "img/social/linkedin.png" %}"> Linkedin</button>
+                <button><img src="{% static "img/social/twitter.png" %}"> Twitter/X</button>
+                <button><img src="{% static "img/social/github.png" %}"> Github</button>
+            </div>
+            <p id="email_text">noorihabib.dev@gmail.com</p>
+        </div>
+    </div>
+
+    <div id="cv" class="section">
+        <p>I'm a freelancer who collaborates with clients from all around the world. Additionally, I'm actively seeking a full-time remote position with a creative agency.</p>
+        <a href="{% static "cv.pdf" %}"><button>My CV</button></a>
+    </div>
+</div>
+
+
+
+{% endblock content %}
