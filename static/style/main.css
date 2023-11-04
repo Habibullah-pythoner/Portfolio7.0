@@ -547,4 +547,7 @@ body.menu #banner #menu_box {
         width: calc(100% - 0px) !important;
         padding-right: 0px;
     }
+    .section {
+        width: calc(100% - 0px) !important;
+    }
 }
