@@ -134,9 +134,13 @@ function tick() {
       var scrollBarHeight = innerHeight - 30
     }
     scrollBar.style.height = scrollBarHeight + "px"
-    scrollBar.querySelector('#thumb').style.top = scrollTop / (main_window.scrollHeight / main_window.offsetHeight) + "px"
+    // scrollBar.querySelector('#thumb').style.top = scrollTop / (main_window.scrollHeight / main_window.offsetHeight) + "px"
 }
 tick()
+
+function backToTop() {
+  document.querySelector('#main-window').scrollTop = 0
+}
 
 function loaded() {
     console.log('Hola');

@@ -107,6 +107,7 @@ body {
 #main-window {
     width: calc(100% - 0px);
     /* max-width: 1500px; */
+    scroll-behavior: smooth;
     height: 100%;
     position: relative;
     left: 50%;
@@ -282,9 +283,13 @@ body.menu #banner #menu_box {
     width: 9px;
     position: relative;
     height: 100px;
+    cursor: pointer;
     margin: 2px;
     background-color: var(--purple);
     border-radius: 15px;
+}
+#scrollBar #thumb:active {
+    transform: scale(0.95);
 }
 #main-contents {
     width: calc(100% - 0px);
@@ -503,6 +508,7 @@ body.menu #banner #menu_box {
         left: 50%;
         transform: translateX(-50%);
         white-space: nowrap;
+        cursor: pointer;
     }
 }
 @media (min-width: 1569px) {

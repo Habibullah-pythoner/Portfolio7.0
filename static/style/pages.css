@@ -339,7 +339,9 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
-
+#callToAction h1 {
+    cursor: pointer;
+}
 #callToAction {
     width: 100%;
     max-width: 800px;
@@ -465,7 +467,7 @@ table.case tr td:first-child {
     overflow: visible;
     align-items: center;
     position: absolute;
-    right: 0px;
+    right: 30px;
 }
 #minicontact.round_icons button {
     padding: 15px;
@@ -652,6 +654,8 @@ table.case tr td:first-child {
         font-size: 9.6rem;
     }
     #callToAction {
+        width: calc(100% - 50px) !important;
+        padding-right: 30px !important;    
         position: sticky;
         bottom: 100px;
         z-index: -1;
@@ -722,9 +726,12 @@ table.case tr td:first-child {
         order: 3;
     }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1569px) {
     #services #slider_parent {
         border-radius: 50px;
+    }
+    #minicontact.round_icons {
+        right: 0px;
     }
 }
 

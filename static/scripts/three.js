@@ -228,6 +228,10 @@ function animate() {
     var shift_top = Math.max((((innerHeight - (scrollTop + 200)) * 20) / innerHeight), 0)
     document.querySelector('#canvas canvas').style.transform = "translateY(-"+ shift_top +"vh)"
 }
-animate();
+
+document.addEventListener('DOMContentLoaded', function() {
+    animate()
+});
+
 
 

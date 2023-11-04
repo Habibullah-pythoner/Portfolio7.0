@@ -31,6 +31,7 @@
         <div id="dot"></div>
         <div id="text">Click For Case Study</div>
     </div>
+
     <div id="main-window">
         <div id="dummy_banner"></div>
         <div id="banner" class="section">
@@ -120,7 +121,7 @@
                 <p>© 2024</p>
                 <p class="big_screen">legal & terms</p>
             </div>
-            <p id="btt">BACK TO TOP</p>
+            <p id="btt" onclick="backToTop()">BACK TO TOP</p>
         </div>
     </div>
 
@@ -128,8 +129,7 @@
         <div id="thumb"></div>
     </div>
     
-    
-    
+    <script src="{% static "scripts/scrollBar.js" %}"></script>
     {% comment %} Scripts {% endcomment %}
     <script src="{% static "scripts/events.js" %}"></script>
 </body>
