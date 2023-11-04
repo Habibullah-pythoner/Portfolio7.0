@@ -107,7 +107,7 @@ body {
 #main-window {
     width: calc(100% - 0px);
     /* max-width: 1500px; */
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
     height: 100%;
     position: relative;
     left: 50%;
@@ -367,7 +367,10 @@ body.menu #banner #menu_box {
     .section {
         width: calc(100% - 30px) !important;
     }
-
+    #footer div {
+        width: calc(100% - 30px) !important;
+        padding-right: 30px;
+    }
     #main_contact_btn #text {
         max-width: 200px;
         display: flex;
@@ -514,6 +517,10 @@ body.menu #banner #menu_box {
 @media (min-width: 1569px) {
     #main-contents {
         width: calc(100%);
+        padding-right: 0px;
+    }
+    #footer div {
+        width: calc(100% - 0px) !important;
         padding-right: 0px;
     }
 }
