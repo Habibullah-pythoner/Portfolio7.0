@@ -5,6 +5,7 @@ const main_window = document.querySelector('#main-window')
 var menu_open = false
 const works = document.querySelectorAll('#works #work')
 const cursor = document.querySelector('#cursor')
+const loading = document.querySelector('#loading')
 
 document.addEventListener('mousemove', (event)=> {
     var x = event.clientX
@@ -30,7 +31,6 @@ function observeSnapContainers() {
         entries.forEach(entry => {
 
             if (entry.isIntersecting) {
-                console.log("Ye");
                 // The element is now in view
                 entry.target.classList.add("active")
                 // Perform your action here, e.g., change styles, execute a function, etc.
@@ -82,7 +82,6 @@ document.querySelector('#main-window').addEventListener('scroll', ()=> {
     } else {
         document.body.classList.remove("message")
     }
-    console.log(scrollTop + " - " + scrollHeight);
     if(scrollTop > scrollHeight - 250) {
       document.body.classList.add("end")
     } else {
@@ -142,9 +141,71 @@ function backToTop() {
   document.querySelector('#main-window').scrollTop = 0
 }
 
+function progress() {
+  function updateProgressBar(loaded, total) {
+    const progressBar = document.getElementById("progress-bar");
+    const progressContainer = document.getElementById("progress-container");
+
+    if (progressBar && progressContainer) {
+        console.log((loaded / total * 100) + "%");
+
+        if (loaded === total) {
+            // All resources have been loaded
+            setTimeout(function () {
+                progressContainer.style.display = "none"; // Hide the progress bar
+            }, 500); // Optional delay for a smoother transition
+        }
+    }
+}
+
+function loadResource(url) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onprogress = function (event) {
+            if (event.lengthComputable) {
+                updateProgressBar(event.loaded, event.total);
+            }
+        };
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                resolve(xhr.responseText);
+            } else {
+                reject(new Error("Failed to load resource"));
+            }
+        };
+        xhr.send();
+    });
+}
+
+
+
+// Load your resources here and update the progress bar
+Promise.all([
+    loadResource("resource1.html"),
+    loadResource("resource2.css"),
+    // Add more resources as needed
+]).then(function () {
+    // All resources have been loaded
+});
+}
+// progress()
+
+
+function setProgress(x) {
+  loading.innerHTML = x + "%";
+  var bottomShift = ((x * 60) / 100) + 30
+  loading.style.bottom = bottomShift+"vh"
+  loading.style.transform = "translate(-50%, "+ x +"%)"
+}
+
 function loaded() {
-    console.log('Hola');
-    setFullHeights()
-    dummyHeight()
-    observeSnapContainers()
+
+  setTimeout(()=> {
+    document.body.classList.add("loaded")
+  }, 300)
+
+  setFullHeights()
+  dummyHeight()
+  observeSnapContainers()
 }

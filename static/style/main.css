@@ -6,7 +6,28 @@
     pointer-events: auto;
     scrollbar-width: none;  /* Firefox */
 }
+body.loaded * {
+    opacity: 1;
+}
 
+.loadingPart, canvas {
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+}
+body.loaded .loadingPart, body.laoded canvas {
+    opacity: 1;
+}
+
+#loading {
+    position: fixed;
+    bottom: 30vh;
+    transition: 0.1s;
+    font-size: 4rem;
+    opacity: 1;
+}
+body.loaded #loading {
+    opacity: 0;
+}
 :root {
     --white: #F5F5F5;
     --black: #000000;
@@ -364,6 +385,9 @@ body.menu #banner #menu_box {
 }
 
 @media (min-width: 1000px) {
+    #loading {
+        font-size: 9.6rem;
+    }
     .section {
         width: calc(100% - 30px) !important;
     }

@@ -52,9 +52,9 @@ renderer.toneMapping = THREE.ReinhardToneMapping;
 document.getElementById('canvas').appendChild( renderer.domElement );
 
 
-console.log("Group Rotation X: " + group.rotation.x);
-console.log("Group Rotation Y: " + group.rotation.y);
-console.log("Group Rotation Z: " + group.rotation.z);
+// console.log("Group Rotation X: " + group.rotation.x);
+// console.log("Group Rotation Y: " + group.rotation.y);
+// console.log("Group Rotation Z: " + group.rotation.z);
 function cameraSetup() {
     target.x = ( 1 - mouse.x ) * 0.0002;
     target.y = ( 1 - mouse.y ) * 0.0002;
@@ -97,16 +97,16 @@ const cameraRotation = {
 let cameraDirection = new THREE.Vector3()
 let camPositionSpan, camLookAtSpan
 
-document.addEventListener('keydown', (event) => {
-    camera.getWorldDirection(cameraDirection)
-    // scale the unit vector up to get a more intuitive value
-    cameraDirection.set(cameraDirection.x * 100, cameraDirection.y * 100, cameraDirection.z * 100)
-    // update the onscreen spans with the camera's position and lookAt vectors
-    console.log(`Position: (${camera.position.x.toFixed(1)}, ${camera.position.y.toFixed(1)}, ${camera.position.z.toFixed(1)})`)
-    console.log(`LookAt: (${(camera.position.x + cameraDirection.x).toFixed(1)}, ${(camera.position.y + cameraDirection.y).toFixed(1)}, ${(camera.position.z + cameraDirection.z).toFixed(1)})`)
+// document.addEventListener('keydown', (event) => {
+//     camera.getWorldDirection(cameraDirection)
+//     // scale the unit vector up to get a more intuitive value
+//     cameraDirection.set(cameraDirection.x * 100, cameraDirection.y * 100, cameraDirection.z * 100)
+//     // update the onscreen spans with the camera's position and lookAt vectors
+//     console.log(`Position: (${camera.position.x.toFixed(1)}, ${camera.position.y.toFixed(1)}, ${camera.position.z.toFixed(1)})`)
+//     console.log(`LookAt: (${(camera.position.x + cameraDirection.x).toFixed(1)}, ${(camera.position.y + cameraDirection.y).toFixed(1)}, ${(camera.position.z + cameraDirection.z).toFixed(1)})`)
 
 
-  });
+//   });
 const newMaterial = new THREE.MeshStandardMaterial({
     color: 0xffffff, // RGB color value
     // You can also set other material properties like emissive, normal map, etc.
@@ -139,7 +139,7 @@ loader.load(
 	// called while loading is progressing
 	function ( xhr ) {
 
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
 	},
 	// called when loading has errors
@@ -201,7 +201,7 @@ loader2.load(
 	// called while loading is progressing
 	function ( xhr ) {
 
-		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+		// console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
 
 	},
 	// called when loading has errors
