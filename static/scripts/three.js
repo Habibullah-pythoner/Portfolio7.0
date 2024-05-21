@@ -223,7 +223,7 @@ function animate() {
 	renderer.render( scene, camera );
 
     var toScrollLeft = Math.max(document.querySelector('#main-window').scrollTop - document.querySelector('#services #dummy').offsetTop + innerHeight, 0)
-    serviceSlider.scrollLeft = toScrollLeft
+    // serviceSlider.scrollLeft = toScrollLeft
 
     var shift_top = Math.max((((innerHeight - (scrollTop + 200)) * 20) / innerHeight), 0)
     document.querySelector('#canvas canvas').style.transform = "translateY(-"+ shift_top +"vh)"

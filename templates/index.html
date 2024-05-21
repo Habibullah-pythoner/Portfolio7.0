@@ -33,7 +33,7 @@ Web Designer and Web Developer | Habibullah
         <p>In the digital landscape, website uniqueness is like a beacon of creativity. Just as each person has a distinct fingerprint, websites should have their own signature. Unique websites captivate visitors and bring diversity to the virtual realm, crafting unique experiences.</p>
     </div>
 </div>
-<div id="message">
+{% comment %} <div id="message">
     <div id="canvas" class="full_height" data-cut="30">
         <div id="border" class="top section"></div>
         <div id="border" class="bottom section"></div>
@@ -45,41 +45,43 @@ Web Designer and Web Developer | Habibullah
         </div>
     </div>
     
-</div>
+</div> {% endcomment %}
 <div id="works" class='gapped'>
-    <p id="mini_header" class="section">Selected Works</p>
+    {% comment %} <p id="mini_header" class="section">Selected Works</p> {% endcomment %}
     <h1 class="section">Unveil a curated selection of my shared works, those I've had the privilege to reveal</h1>
     <div id="flex">
-        <div id="slider_parent" class="swiper mySwiper">
-            <div id="slider" class="snap-scroll-container swiper-wrapper">
+        <div id="slider_parent" class="">
+            {% comment %} <div id="slider" class="snap-scroll-container swiper-wrapper"> {% endcomment %}
                 {% for work in works %}
                 
                     <div id="work" class="snap-trigger first swiper-slide">
-                        <a class="fit_all" href="case/{{ work.slug }}">
+                        {% comment %} <a class="fit_all" href="case/{{ work.slug }}"> {% endcomment %}
                             <div id="img">
                                 <img src="{{ work.thumbnail.url }}">
                             </div>
-                        </a>
+                        {% comment %} </a> {% endcomment %}
                         <div id="content">
                             <div id="text">
                                 <h2>{{ work.name }}</h2>
-                                <p class="big_screen">{{ work.job }}</p>
+                                
                             </div>
-                            <button>MORE</button>
+                            <a class="" href="case/{{ work.slug }}">
+                                <button>Case Study</button>
+                            </a>
                         </div>
                     </div>
                 {% endfor %}
                 
                     
             
-            </div>
+            {% comment %} </div> {% endcomment %}
         </div>
-        <button id="more" class="big_screen">MORE WORK</button>
-        <button id="more" class="small_screen">MORE WORK</button>
+        {% comment %} <button id="more" class="big_screen">MORE WORK</button>
+        <button id="more" class="small_screen">MORE WORK</button> {% endcomment %}
     </div>
 </div>
 <div id="services">
-    <div id="col_flex" class="full_height">
+    <div id="col_flex" class="">
         <p class="section">My Services</p>
         <div id="slider_parent" class="snap-scroll-container">
             <div id="slider">
@@ -125,19 +127,29 @@ Web Designer and Web Developer | Habibullah
     </div>
     <div id="dummy"></div>
 </div>
-<div id="about" class="section gapped">
-    <h1>WHO AM I, ANYWAYS</h1>
-    <div id="my_image">
+<div id="about" class="gapped section">
+    {% comment %} <h1>WHO AM I, ANYWAYS</h1> {% endcomment %}
+    {% comment %} <div id="my_image">
         <img src="{% static "img/portraits/me.webp" %}">
-    </div>
-    <div id="content">
+    </div> {% endcomment %}
+    {% comment %} <div id="content">
         <p>Hey there, I'm Habib, and I've been in the web game for over 5 years now. I'm not your run-of-the-mill web developer – I'm more like a digital magician. I can whip up full-stack websites and super functional systems, and I have a soft spot for making things not just work but look darn good too.
             You see, I'm all about the blend of functionality and beauty, and user experience? It's my jam. But here's the kicker – I'm not satisfied until your brand is the one everyone's talking about. I'm all about making you stand out in the sea of competitors.
             So, if you're ready to take your brand to the next level, and maybe even make your competitors a tad jealous, let's chat. I promise, it'll be a digital adventure filled with creativity, some laughs, and a whole lot of success. Your digital canvas is waiting, and I'm here to be your brush – let's paint something amazing together!</p>
+    </div> {% endcomment %}
+    <p id="about_text" class="">The name's Habib, or Habibullah Noori if you prefer the full title. I've been crafting websites, web apps, and designing stunning UI and UX for a good five years now. So, yes, I've been in this business for quite a while.</p>
+    <div id="flex">
+        <div id="more_link">
+            <a href="/about" id="more_about">
+                MORE ABOUT ME
+            </a>
+        </div>
+        <div id="cv" class="">
+            <p>I'm a freelancer who collaborates with clients from all around the world. Additionally, I'm actively seeking a full-time remote position with a creative agency.</p>
+            <a href="{% static "cv.pdf" %}"><button id="cv_button">My CV</button></a>
+        </div>
     </div>
-    <a href="/about">
-        <button>I LIKE YOU, I WANT TO KNOW MORE</button>
-    </a>
+    
 </div>
 
 
@@ -232,5 +244,35 @@ Web Designer and Web Developer | Habibullah
       });
     }
   });</script>
+
+  <script>
+    const slider = document.querySelector('#works #flex');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+    });
+    slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1; //scroll-fast
+    console.log(slider)
+    slider.scrollLeft = scrollLeft - walk;
+    });
+</script>
 {% endblock outofborder %}
 

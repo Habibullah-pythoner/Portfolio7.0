@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Web Designer and Web Developer | Habibullah | Order Product
+
+{% endblock title %}
+
+{% block content %}
+
+<div id="center" class="section">
+    <div id="content">
+        <h1>On-site ordering is currently under work.</h1>
+        <p>Instead you can contact me directly and we can discuss what you need.</p>
+        <div id="minicontact" class="round_icons">
+            <a href="mailto:noorihabib.dev@gmail.com" target="_blank">
+                <button>
+                    <img src="{% static "img/social/email.png" %}">
+                </button>
+            </a>
+            <a href="https://www.linkedin.com/in/habibullah-noori-692860211/" target="_blank">
+                <button>
+                    <img src="{% static "img/social/linkedin.png" %}">
+                </button>
+            </a>
+            <a href="https://twitter.com/Habib00405378" target="_blank">
+                <button>
+                    <img src="{% static "img/social/twitter.png" %}">
+                </button>
+            </a>
+            <a href="https://github.com/Habibullah-pythoner" target="_blank">
+                <button>
+                    <img src="{% static "img/social/github.png" %}">
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

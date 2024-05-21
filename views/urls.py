@@ -9,6 +9,7 @@ urlpatterns = [
     path('lab', lab),
     path('case/<str:work>', case_study),
     path('about', about),
+    path('order', order),
 ]
 
 if settings.DEBUG:

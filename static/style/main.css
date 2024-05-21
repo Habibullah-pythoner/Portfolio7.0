@@ -10,17 +10,37 @@ body.loaded * {
     opacity: 1;
 }
 
-.loadingPart, canvas {
+.loadingPart, #works {
     opacity: 0;
     transition: 0.2s opacity ease-in-out;
 }
-body.loaded .loadingPart, body.laoded canvas {
-    opacity: 1;
+body.loaded .loadingPart, body.loaded #works {
+    opacity: 1 !important;
+}
+
+#center {
+    height: calc(100vh - 100px);
+}
+#center #minicontact {
+    right: auto;
+    left: 0px;
+    position: relative;
+}
+#center p {
+    font-size: 1.8rem;
+}
+#center #content {
+    display: flex;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 20px;
 }
 
 #loading {
     position: fixed;
-    bottom: 30vh;
+    bottom: 10vh;
     transition: 0.1s;
     font-size: 4rem;
     opacity: 1;
@@ -133,8 +153,11 @@ body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
+}
+body.loaded #main-window {
+    overflow-y: scroll;
 }
 #dummy_banner {
     height: 63px;
@@ -144,7 +167,6 @@ body {
     background-color: var(--white);
     width: 100%;
     top: 0px;
-    gap: 15px;
     margin-top: 15px;
     position: absolute;
     min-height: 48px;
@@ -157,6 +179,11 @@ body {
     justify-content: center !important;
     gap: 7px;
 }
+#banner #menu_box a button #flex {
+    height: 100% !important;
+    padding: 0px;
+    margin: 0px;
+} 
 #banner button svg {
     width: 20px;
     height: 20px;
@@ -166,6 +193,7 @@ body {
     border: 1px solid var(--black);
     background-color: transparent;
     padding: 0px 30px;
+    height: 100%;
     border-radius: 15px;
 }
 #banner #flex button {
@@ -374,6 +402,7 @@ body.menu #banner #menu_box {
 }
 #about_contact {
     padding-bottom: 150px;
+    margin-top: 80px;
 }
 #contact_flex {
     margin-top: 30px;
@@ -385,6 +414,9 @@ body.menu #banner #menu_box {
 }
 
 @media (min-width: 1000px) {
+    #banner {
+        gap: 15px;
+    }
     #loading {
         font-size: 9.6rem;
     }
@@ -453,7 +485,7 @@ body.menu #banner #menu_box {
         justify-content: center;
     }
     #banner #mini_flex div a:first-of-type {
-        margin-left: 10px;
+        margin-left: 5px;
     }
     #banner #bar #mini_flex div button img {
         height: 20px;
@@ -478,6 +510,7 @@ body.menu #banner #menu_box {
     #cv {
         width: 45% !important;
         padding-right: 5%;
+        margin-left: auto;
         margin-top: 0px;
         left: 0px;
         transform: none;
@@ -507,6 +540,7 @@ body.menu #banner #menu_box {
     }
     #banner #bar #flex {
         width: calc(100% - 5px);
+        margin-left: 2.5px;
     }
     #banner #bar #flex img {
         margin: 25px;

@@ -28,3 +28,6 @@ def case_study(request, work):
 
 def about(request):
     return render(request, 'about.html')
+
+def order(request):
+    return render(request, 'order.html')

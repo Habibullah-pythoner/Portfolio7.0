@@ -24,7 +24,7 @@ function observeSnapContainers() {
       const observerOptions = {
         root: container,
         rootMargin: '0px',
-        threshold: 1, // Adjust this threshold as needed
+        threshold: 0.6, // Adjust this threshold as needed
       };
   
       const handleIntersection = (entries, observer) => {
@@ -194,7 +194,8 @@ Promise.all([
 
 function setProgress(x) {
   loading.innerHTML = x + "%";
-  var bottomShift = ((x * 60) / 100) + 30
+  var bottomShift = ((x * 80) / 100) + 10
+  console.log(bottomShift);
   loading.style.bottom = bottomShift+"vh"
   loading.style.transform = "translate(-50%, "+ x +"%)"
 }
