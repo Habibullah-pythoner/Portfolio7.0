@@ -48,7 +48,7 @@ Web Designer and Web Developer | Habibullah
 </div> {% endcomment %}
 <div id="works" class='gapped'>
     {% comment %} <p id="mini_header" class="section">Selected Works</p> {% endcomment %}
-    <h1 class="section">Unveil a curated selection of my shared works, those I've had the privilege to reveal</h1>
+    <h1 class="section">My Works</h1>
     <div id="flex">
         <div id="slider_parent" class="">
             {% comment %} <div id="slider" class="snap-scroll-container swiper-wrapper"> {% endcomment %}
@@ -172,8 +172,27 @@ Web Designer and Web Developer | Habibullah
 <div id="dummyCallToAction" class="section colorless big_screen"></div>
 <div id="callToAction" class="section small_screen">
     <div id="content">
-        <p>Have the Website Champ Your Competitors Envy!</p>
-        <a href="mailto:noorihabib.dev@gmail.com"><h1>EMAIL</h1></a>
+        <p>Let's start a project together.</p>
+        <div id="flex">
+            <a href="mailto:noorihabib.dev@gmail.com" id="email"><button id="email">EMAIL</button></a>
+            <div id="minicontact" class="round_icons">
+                <a href="https://www.linkedin.com/in/habibullah-noori-692860211/" target="_blank">
+                    <button>
+                        <img src="{% static "img/social/linkedin.png" %}">
+                    </button>
+                </a>
+                <a href="https://twitter.com/Habib00405378" target="_blank">
+                    <button>
+                        <img src="{% static "img/social/twitter.png" %}">
+                    </button>
+                </a>
+                <a href="https://github.com/Habibullah-pythoner" target="_blank">
+                    <button>
+                        <img src="{% static "img/social/github.png" %}">
+                    </button>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
@@ -183,8 +202,8 @@ Web Designer and Web Developer | Habibullah
 <div id="callToAction" class="section big_screen">
     <div id="content">
         <div id="texts">
-            <p>Have the Website Champ Your Competitors Envy!</p>
-            <a href="mailto:noorihabib.dev@gmail.com"><h1>EMAIL</h1></a>
+            <p>Let's start a project together.</p>
+            <a href="mailto:noorihabib.dev@gmail.com" id="email"><button id="email">EMAIL</button></a>
         </div>
         
     </div>

@@ -364,7 +364,7 @@ body.menu #banner #menu_box {
     object-fit: cover;
 }
 #about_text {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-top: 20px;
 }
 .about_section {
@@ -386,8 +386,8 @@ body.menu #banner #menu_box {
 }
 
 #cv {
-    margin-top: 90px;
-    margin-bottom: 70px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 #cv p {
     font-size: 1.6rem;
@@ -512,6 +512,7 @@ body.menu #banner #menu_box {
         padding-right: 5%;
         margin-left: auto;
         margin-top: 0px;
+        margin-bottom: 70px;
         left: 0px;
         transform: none;
     }
