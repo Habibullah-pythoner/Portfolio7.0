@@ -147,7 +147,7 @@ function progress() {
     const progressContainer = document.getElementById("progress-container");
 
     if (progressBar && progressContainer) {
-        console.log((loaded / total * 100) + "%");
+        // console.log((loaded / total * 100) + "%");
 
         if (loaded === total) {
             // All resources have been loaded
@@ -195,7 +195,7 @@ Promise.all([
 function setProgress(x) {
   loading.innerHTML = x + "%";
   var bottomShift = ((x * 80) / 100) + 10
-  console.log(bottomShift);
+  // console.log(bottomShift);
   loading.style.bottom = bottomShift+"vh"
   loading.style.transform = "translate(-50%, "+ x +"%)"
 }

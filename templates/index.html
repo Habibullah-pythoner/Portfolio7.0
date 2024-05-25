@@ -9,8 +9,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
 />
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+{% comment %} 
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> {% endcomment %}
 {% endblock extra_features %}
 
 {% block title %}
@@ -71,7 +71,13 @@ Web Designer and Web Developer | Habibullah
                         </div>
                     </div>
                 {% endfor %}
-                
+                <div id="work" class="snap-trigger first swiper-slide more_work">
+                    <a href="/projects">
+                     <button>
+                         <img src="{% static "img/link.png" %}">
+                         More of my projects</button>
+                        </a>
+                </div>
                     
             
             {% comment %} </div> {% endcomment %}
@@ -165,10 +171,10 @@ Web Designer and Web Developer | Habibullah
       }
     }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
 
-<script type="module" src="{% static "scripts/three.js" %}"></script>
-<script type="module" src="{% static "scripts/swiper.js" %}"></script>
+{% comment %} <script type="module" src="{% static "scripts/three.js" %}"></script> {% endcomment %}
+{% comment %} <script type="module" src="{% static "scripts/swiper.js" %}"></script> {% endcomment %}
 <div id="dummyCallToAction" class="section colorless big_screen"></div>
 <div id="callToAction" class="section small_screen">
     <div id="content">
@@ -289,7 +295,7 @@ Web Designer and Web Developer | Habibullah
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 1; //scroll-fast
-    console.log(slider)
+    {% comment %} console.log(slider) {% endcomment %}
     slider.scrollLeft = scrollLeft - walk;
     });
 </script>
