@@ -913,3 +913,9 @@ a {
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+#work * {
+    user-select: none !important;
+}
+#work img {
+    pointer-events: none;
+}
