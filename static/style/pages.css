@@ -340,9 +340,7 @@ h1 {
 #service.active #bottom_shade {
     max-height: 0%;
 }
-#services #context p {
-    font-size: 1.8rem;
-}
+
 
 #about {
     display: flex;
