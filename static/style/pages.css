@@ -454,7 +454,7 @@ h1 {
     flex-direction: column;
     background-color: var(--white);
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 #caseLanding h1 {
     font-size: 4rem;
@@ -480,7 +480,7 @@ table.case tr td:first-child {
     background-color: var(--white);
     overflow: hidden;
     border: 1px solid var(--black);
-    border-radius: 25px;
+    border-radius: 10px;
 }
 #main_mockup img {
     width: 100%;
@@ -493,7 +493,7 @@ table.case tr td:first-child {
     font-size: 2.8rem;
 }
 .case_section {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .case_section h1 {
     margin-bottom: 10px;
@@ -541,7 +541,7 @@ table.case tr td:first-child {
     /* height: calc(100% - 2px); */
     width: 100%;
     border: 1px solid var(--black);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 #minicontact.round_icons {
     display: flex;
@@ -903,4 +903,15 @@ button:hover {
 }
 button:active {
     background-color: #ddd8d8 !important;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* You can do the same for links */
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
